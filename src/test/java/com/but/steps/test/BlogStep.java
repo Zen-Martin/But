@@ -3,6 +3,7 @@ package com.but.steps.test;
 import com.but.context.ScenarioContext;
 import com.but.pageObjects.BlogPage;
 import io.cucumber.java8.En;
+import org.testng.Assert;
 
 public class BlogStep implements En {
 
@@ -20,7 +21,7 @@ public class BlogStep implements En {
         });
 
         Then("The images are not loaded", () -> {
-            blogPage.verifyBrokenImg();
+            Assert.assertEquals(blogPage.verifyBrokenImg(),true);
         });
 
 
