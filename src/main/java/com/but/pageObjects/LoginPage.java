@@ -31,8 +31,7 @@ public class LoginPage extends Page {
     @FindBy(css = "#already-client > div.session > div")
     private WebElement sessionInfo;
 
-    @FindBy(css = "#already-client > div.session > label")
-    private WebElement stayConnect;
+    private final String loginInfo = "#already-client > div.session > div";
 
     private String title = "";
 
@@ -85,8 +84,10 @@ public class LoginPage extends Page {
     }
 
     public boolean verifyInfoSession(){
-        return !js.executeScript("return window.getComputedStyle(arguments[0], ':before').getPropertyValue();",stayConnect)
-                .toString().isEmpty();
+        String text = js.executeScript("return window.getComputedStyle(document.querySelector('"+loginInfo+"'),'::before').getPropertyValue('content')")
+                .toString();
+
+       return !text.contains("none");
     }
 
 }

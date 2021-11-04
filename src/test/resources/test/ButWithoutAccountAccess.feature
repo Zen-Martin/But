@@ -10,14 +10,6 @@ Feature: Re-Test Cases for But Website without account Access
     And Click on the differents links
     Then A *404-error* page is displayed
 
-#  @severity=minor
-#  @bug_1828
-#  Scenario: Overlay of elements
-#    When Scroll down to the section *Fabrication française*
-#    And Click on *Découvrez les*
-#    And The page display, scroll down to discover the articles
-#    Then The title is overlaid on the product image
-
   @severity=critical
   @bug_1829
   Scenario: Indefinite loading
@@ -82,12 +74,12 @@ Feature: Re-Test Cases for But Website without account Access
     Then Redirect to the home page after registration / reset fields
     But Display of the subscription confirmation message
 
-#  @severity=critical
-#  @bug_1867
-#  Scenario: Information button not working
-#    When Click on *Se connecter* in the navigation bar
-#    And Click on the button to the right of the checkbox *Rester connecté(e)*
-#    Then No reaction
+  @severity=critical
+  @bug_1867
+  Scenario: Information button not working
+    When Click on *Se connecter* in the navigation bar
+    And Click on the button to the right of the checkbox *Rester connecté(e)*
+    Then No reaction
 
   @severity=critical
   @bug_1868
