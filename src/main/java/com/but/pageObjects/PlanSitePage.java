@@ -21,7 +21,7 @@ public class PlanSitePage extends Page{
         get(config.getEnvironment()+"plan-site");
     }
 
-    private void clickOnNavBarItem(String elementNavigation){
+    private void clickOnNavBarItem(String elementNavigation) {
         WebElement button = siteMap
                 .stream()
                 .filter( elt -> elt.getText().equals(elementNavigation))

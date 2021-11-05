@@ -26,12 +26,12 @@ public class SamsungWashPage extends Page{
         get(clothWash);
     }
 
-    public void clickOnAddItem(){
+    public void clickOnAddItem() {
         shortUntil(visibilityOf(addItem));
         clickOn(addItem);
     }
 
-    public void clickOnSeePack(){
+    public void clickOnSeePack() {
         shortUntil(visibilityOf(seePack));
         try {
             clickOn(seePack);
@@ -39,7 +39,6 @@ public class SamsungWashPage extends Page{
         }catch (Exception e){
 
         }
-
     }
 
     public boolean verifySeePack(){

@@ -31,9 +31,14 @@ public class LoginPage extends Page {
     @FindBy(css = "#already-client > div.session > div")
     private WebElement sessionInfo;
 
+    @FindBy(css = " div.board-hover.account-customer > ul > li:nth-child(4) > a")
+    private WebElement disconnect;
+
     private final String loginInfo = "#already-client > div.session > div";
 
     private String title = "";
+
+    private String actionMethod = "";
 
     private static int logged = 0;
 
@@ -80,14 +85,13 @@ public class LoginPage extends Page {
     }
 
     public void clickOnSessionInfo(){
+        actionMethod = js.executeScript("return window.getComputedStyle(document.querySelector('"+loginInfo+"'),'::before').getPropertyValue('content')")
+                .toString();
         clickOn(sessionInfo);
     }
 
     public boolean verifyInfoSession(){
-        String text = js.executeScript("return window.getComputedStyle(document.querySelector('"+loginInfo+"'),'::before').getPropertyValue('content')")
-                .toString();
-
-       return !text.contains("none");
+       return !actionMethod.contains("none");
     }
 
 }
