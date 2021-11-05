@@ -34,7 +34,6 @@ Feature: Re-Test Cases for But Website without account Access
   Scenario: No reaction from the "Voir pack" button
     When Go on specific article *Samsung Lave Linge*
     And Click on *Ajouter au panier*
-    And The add pop in is displayed
     And Click on *Voir le pack*
     Then No reaction from the button
 
